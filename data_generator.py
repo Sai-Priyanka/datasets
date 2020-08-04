@@ -67,8 +67,8 @@ DatasetDescriptor = collections.namedtuple(
                         # num_classes=21.
         'ignore_label',  # Ignore label value.
     ])
-    
-PQR_SEG_INFORMATION = DatasetDescriptor(
+
+_PQR_SEG_INFORMATION = DatasetDescriptor(
     splits_to_sizes={
         'train': 2400, # number of file in the train folder
         'trainval': 2800,

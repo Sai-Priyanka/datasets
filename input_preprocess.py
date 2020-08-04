@@ -106,7 +106,7 @@ def preprocess_image_and_label(image,
   # Pad image and label to have dimensions >= [crop_height, crop_width]
   image_shape = tf.shape(processed_image)
   image_height = image_shape[0]
-  image_width = image_shape
+  image_width = image_shape[1]
 
   target_height = image_height + tf.maximum(crop_height - image_height, 0)
   target_width = image_width + tf.maximum(crop_width - image_width, 0)
