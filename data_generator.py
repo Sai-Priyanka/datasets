@@ -67,6 +67,16 @@ DatasetDescriptor = collections.namedtuple(
                         # num_classes=21.
         'ignore_label',  # Ignore label value.
     ])
+    
+PQR_SEG_INFORMATION = DatasetDescriptor(
+    splits_to_sizes={
+        'train': 2400, # number of file in the train folder
+        'trainval': 2800,
+        'val': 400,
+    },
+    num_classes=5, # number of classes in your dataset
+    ignore_label=255, # white edges that will be ignored to be class
+)
 
 _CITYSCAPES_INFORMATION = DatasetDescriptor(
     splits_to_sizes={'train_fine': 2975,
@@ -103,6 +113,7 @@ _DATASETS_INFORMATION = {
     'cityscapes': _CITYSCAPES_INFORMATION,
     'pascal_voc_seg': _PASCAL_VOC_SEG_INFORMATION,
     'ade20k': _ADE20K_INFORMATION,
+    'pqr': _PQR_SEG_INFORMATION,
 }
 
 # Default file pattern of TFRecord of TensorFlow Example.
